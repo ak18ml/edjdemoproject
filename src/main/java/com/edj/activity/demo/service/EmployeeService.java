@@ -34,13 +34,6 @@ public class EmployeeService {
 		return emp.get(0);
 	}
 
-	public Employee getId(String id) throws CustomException {
-		var emp = employeeRepo.findById(id)
-				.orElseThrow(() -> new CustomException("Employee details with given Id does not exist",
-						HttpStatus.NOT_FOUND.value()));
-		return emp;
-	}
-
 	public List<Employee> getAll() {
 		return employeeRepo.findAll();
 	}
